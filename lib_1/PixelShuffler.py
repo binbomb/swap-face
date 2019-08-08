@@ -10,8 +10,9 @@ import keras.backend as K
 class PixelShuffler(Layer):
     def __init__(self, size=(2, 2), data_format=None, **kwargs):
         super(PixelShuffler, self).__init__(**kwargs)
-        self.data_format = conv_utils.normalize_data_format(data_format)
         self.size = conv_utils.normalize_tuple(size, 2, 'size')
+        self.data_format = conv_utils.normalize_data_format(data_format)
+        
 
     def call(self, inputs):
 
